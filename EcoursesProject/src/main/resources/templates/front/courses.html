@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.com">
+
+<head>
+    <meta charset="utf-8">
+    <title>ECOURSES - Online Courses HTML Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
+
+    <!-- Favicon -->
+    <link href="front/img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"> 
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="front/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="front/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+   <!-- Navbar & Topbar Start -->
+       
+          <div th:replace="fragments/front_header :: header(activePage = 'courses')"></div>
+       
+      <!-- Navbar & Topbar End -->
+
+
+    <!-- Header Start -->
+    <div class="container-fluid page-header" style="margin-bottom: 90px;">
+        <div class="container">
+            <div class="d-flex flex-column justify-content-center" style="min-height: 300px">
+                <h3 class="display-4 text-white text-uppercase">Courses</h3>
+                <div class="d-inline-flex text-white">
+                    <p class="m-0 text-uppercase"><a class="text-white" th:href="@{/home}">Home</a></p>
+                    <i class="fa fa-angle-double-right pt-1 px-3"></i>
+                    <p class="m-0 text-uppercase">Courses</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Header End -->
+
+
+    <!-- Category Start -->
+    <div class="container-fluid py-5">
+        <div class="container pt-5 pb-3">
+            <div class="text-center mb-5">
+                <h5 class="text-primary text-uppercase mb-3" style="letter-spacing: 5px;">Categories</h5>
+                <h1>Explore All Categories</h1>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4" th:if="${category.courses.size>0}" th:each="category:${categories}">
+                    <div class="cat-item position-relative overflow-hidden rounded mb-2">
+                        <img class="img-fluid" th:src="${category.image}" alt="">
+                        <a class="cat-overlay text-white text-decoration-none" th:href="@{'courses'(category_id=${category.id})}">
+                            <h4 class="text-white font-weight-medium" th:text="${category.name}" ></h4>
+                            <span th:text="${category.courses.size+' Courses'}"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Category Start -->
+
+
+    <!-- Courses Start -->
+    <div class="container-fluid py-5">
+        <div class="container py-5">
+            <div class="text-center mb-5">          
+                <h1>Courses</h1>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4"  th:each="course:${courses}">
+                    <div class="rounded overflow-hidden mb-2">
+                        <img class="img-fluid" th:src="${course.image}" alt="">
+                        <div class="bg-secondary p-4">
+                            <div class="d-flex justify-content-between mb-3">
+                                <small class="m-0"><i class="fa fa-users text-primary mr-2"  th:text="${' '+course.students+' Students'}"></i></small>
+                                <small class="m-0"><i class="far fa-clock text-primary mr-2" th:text="${' '+course.duration}"></i></small>
+                            </div>
+                            <a class="h5" th:text="${course.name}"></a>
+                            <div class="border-top mt-4 pt-4">
+                                <div class="d-flex justify-content-between">
+                                    <h6 class="m-0"><i class="fa fa-star text-primary mr-2"  th:text="${' '+course.rating}"></i></h6>
+                                    <h5 class="m-0" th:text="${course.price}"></h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>                             
+            </div>
+        </div>
+    </div>
+    <!-- Courses End -->
+
+
+ <!-- Footer Start -->
+    
+       <div th:replace="fragments/front_footer :: footer"></div>
+    
+        <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="fa fa-angle-double-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="front/lib/easing/easing.min.js"></script>
+    <script src="front/lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Contact Javascript File -->
+    <script src="front/mail/jqBootstrapValidation.min.js"></script>
+    <script src="front/mail/contact.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="front/js/main.js"></script>
+</body>
+
+</html>

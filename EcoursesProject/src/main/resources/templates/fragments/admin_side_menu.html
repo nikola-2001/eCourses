@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.com">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+
+
+</head>
+<body>
+
+<header> 
+
+ <!-- Main Sidebar Container -->
+  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <!-- Brand Logo -->
+    <a th:target="_blank" href="https://cubes.edu.rs"  class="brand-link">
+      <img src="dist/img/AdminLTELogo.png" alt="Cubes School Logo" class="brand-image img-circle elevation-3"
+           style="opacity: .8">
+      <span class="brand-text font-weight-light">Cubes School</span>
+    </a>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <!-- Sidebar Menu -->
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+               
+       
+              <li class="nav-item has-treeview">
+	            <a href="#" class="nav-link">
+	              <i class="nav-icon far fa-plus-square"></i>
+	              <p>
+	                Categories
+	                <i class="right fas fa-angle-left"></i>
+	              </p>
+	            </a>
+	            <ul class="nav nav-treeview">
+	              <li class="nav-item">
+	                <a href="categories" class="nav-link">
+	                  <i class="far fa-circle nav-icon"></i>
+	                  <p>Categories list</p>
+	                </a>
+	              </li>
+	              <li class="nav-item">
+	                <a href="category-form" class="nav-link">
+	                  <i class="far fa-circle nav-icon"></i>
+	                  <p>Add Category</p>
+	                </a>
+	              </li>
+	            </ul>
+	          </li>
+	          
+	                    
+	         <li class="nav-item has-treeview">
+	            <a href="#" class="nav-link">
+	              <i class="nav-icon far fa-plus-square"></i>
+	              <p>
+	                Courses
+	                <i class="right fas fa-angle-left"></i>
+	              </p>
+	            </a>
+	            <ul class="nav nav-treeview">
+	              <li class="nav-item">
+	                <a href="courses" class="nav-link">
+	                  <i class="far fa-circle nav-icon"></i>
+	                  <p>Course list</p>
+	                </a>
+	              </li>
+	              <li class="nav-item">
+	                <a href="course-form" class="nav-link">
+	                  <i class="far fa-circle nav-icon"></i>
+	                  <p>Add Course</p>
+	                </a>
+	              </li>
+	            </ul>
+	          </li>
+          
+          
+             
+           <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon far fa-plus-square"></i>
+              <p>
+                 Sliders
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="sliders" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Sliders list</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="slider-form" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Add Slider</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+      
+          
+          
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon far fa-plus-square"></i>
+              <p>
+                 Testimonials
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="testimonials" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Testimonials list</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="testimonial-form" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Add new testimonial</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          
+
+	          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon far fa-plus-square"></i>
+              <p>
+               Teachers
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="teachers" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Teachers list</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="teacher-form" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Add Teacher</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+	          
+          
+          <li class="nav-item has-treeview">
+            <a href="registrations" class="nav-link">
+              <i class="nav-icon far fa-plus-square"></i>
+              <p>
+              Registrations
+              <span  th:if="${countRegistrations>0} "   th:text="${countRegistrations}"  class="badge badge-info right"></span> 
+              </p>
+            </a>
+          </li>
+          
+          
+          
+          <li class="nav-item has-treeview">
+            <a href="contacts" class="nav-link">
+              <i class="nav-icon far fa-plus-square"></i>
+              <p>
+              Contacts
+              <span  th:if="${countContacts>0} "   th:text="${countContacts}"  class="badge badge-info right"></span> 
+              </p>
+            </a>
+          </li>
+          
+          
+        </ul>
+      </nav>
+      <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+  </aside>
+
+
+
+</header>
+
+</body>
+</html>
